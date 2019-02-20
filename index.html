@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Color Hash</title>
+<style>
+	body {font-family: arial; color: #e0e0e0;}
+	#colorBox {max-width: 245px; height: 50px; margin: 10px auto 0;}
+	.container {margin: auto; max-width: 100%; text-align: center;}
+	h2 {color: #2b2b2b; font-size: 35px;}
+	#txtbox {
+		max-width: 200px;
+    width: 100%;
+    font-size: 20px;
+    padding: 6px 20px;
+	}
+</style>
+</head>
+
+<body>
+<div class="container">
+	<h2>Type Hex code to see color</h2>
+	<input type="text" placeholder="Type color code" id="txtbox" maxlength="7">
+	<div id="colorBox"></div>
+</div>
+
+<script src="js/jquery-2.2.3.min.js"></script>
+<script>
+
+$('#txtbox').on('input', function() {
+	var colorHash = $('#txtbox').val();
+	$(this).css('color', colorHash);
+	$('#colorBox').css('background', colorHash);
+	if (colorHash === '#fff')
+});
+
+$("#txtbox").keyup(function(){
+    var prefix = "#"
+    if(this.value.indexOf(prefix) !== 0 ){
+        this.value = prefix + this.value;
+    }
+});
+
+</script>
+</body>
+</html>
